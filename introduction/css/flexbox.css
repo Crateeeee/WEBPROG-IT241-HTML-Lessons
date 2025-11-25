@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
- color: #ffffff;
+ color: #000000;
  margin-top: 20px;
  margin-bottom: 10px;
 }
@@ -52,15 +52,7 @@ img {
   background-color: rgb(49, 145, 38);
 }
 
-.container h2 {
-  background-color: #ffffff;
-  width: 100px;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;  
-  font-size: 30px;
-}
-
+/* flexbox */
 .container {
   display: flex;
   background-color: DodgerBlue;
@@ -72,4 +64,16 @@ img {
   padding: 20px;
   font-size: 18px;
   flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.container div h2 {
+  margin-top: 0;
+}
+.container div ul {
+  text-align: left;
+  display: inline-block;
 }
