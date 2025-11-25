@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
- color: #007bff;
+ color: #ffffff;
  margin-top: 20px;
  margin-bottom: 10px;
 }
@@ -52,11 +52,24 @@ img {
   background-color: rgb(49, 145, 38);
 }
 
-.container h1 {
-  background-color: #ef85e5;
+.container h2 {
+  background-color: #ffffff;
   width: 100px;
   margin: 10px;
   padding: 10px;
   text-align: center;  
   font-size: 30px;
+}
+
+.container {
+  display: flex;
+  background-color: DodgerBlue;
+  flex-wrap: wrap;
+}
+.container div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 18px;
+  flex: 1 1 300px;
 }
