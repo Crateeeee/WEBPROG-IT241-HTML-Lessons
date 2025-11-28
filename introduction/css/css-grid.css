@@ -1,14 +1,62 @@
+* {
+  box-sizing: border-box;
+}
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: rgb(34, 207, 66);
-  padding: 5px;
-  gap: 5px;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  gap: 20px;
 }
-.container div {
-  background-color: #f5a5ed;
-  color: #000;
+/* Mobile first */
+.container > * {
+  border: 1px solid green;
+  background-color: beige;
   padding: 10px;
-  font-size: 30px;
-  text-align: center;
+  grid-column: col-start / span 12;
+}
+.container h2 {
+  margin-top: 0;
+}
+.container ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+@media (min-width: 576px) {
+  .about {
+    grid-column: col-start / span 6;
+  }
+  .education {
+    grid-column: col-start 7 / span 6;
+  }
+  .achievements {
+    grid-column: col-start / span 6;
+  }
+  .experience {
+    grid-column: col-start 7 / span 6;
+  }
+  .hobbies {
+    grid-column: col-start / span 6;
+  }
+  .goals {
+    grid-column: col-start 7 / span 6;
+  }
+}
+@media (min-width: 768px) {
+  .about {
+    grid-column: col-start / span 4;
+  }
+  .education {
+    grid-column: col-start 5 / span 4;
+  }
+  .achievements {
+    grid-column: col-start 9 / span 4;
+  }
+  .experience {
+    grid-column: col-start / span 4;
+  }
+  .hobbies {
+    grid-column: col-start 5 / span 4;
+  }
+  .goals {
+    grid-column: col-start 9 / span 4;
+  }
 }
