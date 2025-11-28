@@ -19,7 +19,7 @@ body {
 .header h1 {
   margin: 0;
   font-size: 48px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
   letter-spacing: 2px;
 }
 .header p {
@@ -107,7 +107,7 @@ body {
 .gallery-header h2 {
   margin: 0;
   font-size: 36px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 .gallery-section img {
   max-width: 100%;
