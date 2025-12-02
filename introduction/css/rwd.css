@@ -1,5 +1,4 @@
-* {
-  box-sizing: border-box;
+* {   box-sizing: border-box;
 }
 
 body {
@@ -92,4 +91,39 @@ body {
   .content {grid-area: 2 / span 4;}
   .facts {grid-area: 2 / span 1;}
   .footer {grid-area: 3 / span 6;}
+  
+  img {
+  width: 100%;
+  height: auto;
+}
+
+.wow {
+  padding: 20px;
+  color: white;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .wow {background: red;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .wow {background: green;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .wow {background: blue;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .wow {background: orange;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .wow {background: pink;}
+}
+    
 }
