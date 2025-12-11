@@ -221,3 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   console.log('🎨 Personal Profile JavaScript loaded successfully!');
 });
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
