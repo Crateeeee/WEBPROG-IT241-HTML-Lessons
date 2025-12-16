@@ -219,7 +219,83 @@ document.addEventListener('DOMContentLoaded', function() {
     footer.appendChild(funButton);
   }
 
-  console.log('🎨 Personal Profile JavaScript loaded successfully!');
+//Crate's work (Liveshare duo)
+
+  // Particle cursor trail effect
+  const canvas = document.createElement('canvas');
+  canvas.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+  `;
+  document.body.appendChild(canvas);
+  
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  const particles = [];
+  const particleColors = ['#33b5e5', '#0099cc', '#FF6B6B', '#4ECDC4', '#FFA07A'];
+  
+  class Particle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.size = Math.random() * 5 + 2;
+      this.speedX = Math.random() * 3 - 1.5;
+      this.speedY = Math.random() * 3 - 1.5;
+      this.color = particleColors[Math.floor(Math.random() * particleColors.length)];
+      this.life = 100;
+    }
+    
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      this.size *= 0.96;
+      this.life -= 2;
+    }
+    
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.life / 100;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  
+  document.addEventListener('mousemove', (e) => {
+    for (let i = 0; i < 3; i++) {
+      particles.push(new Particle(e.clientX, e.clientY));
+    }
+  });
+  
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    for (let i = particles.length - 1; i >= 0; i--) {
+      particles[i].update();
+      particles[i].draw();
+      
+      if (particles[i].life <= 0) {
+        particles.splice(i, 1);
+      }
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  animate();
+  
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  console.log('🎨 Personal Profile JavaScript loaded successfully with particle effect!');
 });
 
 function myFunction() {
