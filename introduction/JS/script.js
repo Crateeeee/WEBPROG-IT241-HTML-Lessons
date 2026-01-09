@@ -48,7 +48,9 @@ function closeModal() {
 }
 
 // Close when clicking the 'x'
-closeBtn.addEventListener('click', closeModal);
+if(closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+}
 
 // Close when clicking outside the image (on the background overlay)
 modal.addEventListener('click', (e) => {
